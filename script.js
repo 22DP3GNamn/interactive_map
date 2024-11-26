@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var map = L.map('map').setView([56.8796, 24.6032], 7);
-
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
-
     fetch('geomap.json')
         .then(response => response.json())
         .then(data => {
