@@ -1,14 +1,8 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Izveidojam karti
-    var map = L.map('map').setView([56.8796, 24.6032], 7); // Latvijas koordinātas
+    var map = L.map('map').setView([56.8796, 24.6032], 7);
 
-    // Pievienojam OpenStreetMap flīzes
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
 
-    // Ielādējam datus no geomap.json
     fetch('geomap.json')
         .then(response => response.json())
         .then(data => {
